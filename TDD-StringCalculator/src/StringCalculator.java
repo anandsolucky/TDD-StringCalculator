@@ -57,7 +57,7 @@ public class StringCalculator {
 			matcher.matches();
 			String customDelimeter = matcher.group(1);
 			
-			// if there are multiple delimeters, ex: [+][*]
+			// if there are multiple delimeters, ex: [+][*], handles any length
 			if(customDelimeter.contains("[") && customDelimeter.contains("]")) {
 				customDelimeter = customDelimeter.replaceAll("\\[", "");
 				customDelimeter = customDelimeter.replaceAll("\\]", "|");
