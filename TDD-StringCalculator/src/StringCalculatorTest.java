@@ -65,4 +65,9 @@ class StringCalculatorTest {
 		expected = 6;
 		assertEquals(expected, sc.add("//add\n2add2add2"), "test 7, Delimiter can be of any length failed");
 	}
+	@Test
+	void testEightAllowMultipleCustomDelim() throws NegativeNumberException {
+		int expected = 6;
+		assertEquals(expected, sc.add("//[*][%]\n1*2%3"), "test 8, Allow multiple delimeter failed");
+	}
 }
