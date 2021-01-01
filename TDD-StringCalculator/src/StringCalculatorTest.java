@@ -11,7 +11,7 @@ class StringCalculatorTest {
 	}
 	
 	@Test
-	void testOneSimpleAdd() {
+	void testOneSimpleAdd() throws NegativeNumberException {
 		int expected = 2;
 		assertEquals(expected, sc.add("1,1"), "Simple add operation failed");
 		expected = 4;
@@ -23,7 +23,7 @@ class StringCalculatorTest {
 	}
 	
 	@Test
-	void testTwoUknownAmountOfNumber() {
+	void testTwoUknownAmountOfNumber() throws NegativeNumberException {
 		int expected = 6;
 		assertEquals(expected, sc.add("1,2,3"), "test 2 unknown amount of number failed");
 		expected = 10;
@@ -31,14 +31,14 @@ class StringCalculatorTest {
 	}
 	
 	@Test
-	void testThreeAllowNewLine() {
+	void testThreeAllowNewLine() throws NegativeNumberException {
 		int expected = 6;
 		assertEquals(expected, sc.add("1\n2,3"), "test 3 allowing new line character failed");
 		expected = 7;
 		assertEquals(expected, sc.add("1\n2\n3,1"), "test 3 allowing new line character failed");
 	}
 	@Test
-	void testFourSupportDiffDelim() {
+	void testFourSupportDiffDelim() throws NegativeNumberException {
 		int expected = 3;
 		assertEquals(expected, sc.add("//;\n1;2"), "test 4 allowing custom delimiter support failed");
 		expected = 3;
@@ -49,9 +49,8 @@ class StringCalculatorTest {
 		try {
 			sc.add("5,4,-3");
 			fail("test 5, couldn't throw exception");
-		} catch (Exception e) {
-			
-			
+		} catch (NegativeNumberException e) {
+			assertThrows(NegativeNumberException.class, ()->sc.add("5,4,-3"));	
 		}
 	}
 }
