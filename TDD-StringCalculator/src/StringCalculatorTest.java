@@ -69,5 +69,7 @@ class StringCalculatorTest {
 	void testEightAllowMultipleCustomDelim() throws NegativeNumberException {
 		int expected = 6;
 		assertEquals(expected, sc.add("//[*][%]\n1*2%3"), "test 8, Allow multiple delimeter failed");
+		expected = 6;
+		assertEquals(expected, sc.add("//[*][+]\n1+2*3"), "test 8, Allow multiple delimeter failed");
 	}
 }

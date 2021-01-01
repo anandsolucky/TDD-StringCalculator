@@ -56,11 +56,26 @@ public class StringCalculator {
 			Matcher matcher = Pattern.compile("//(.*)\n(.*)").matcher(numbers);
 			matcher.matches();
 			String customDelimeter = matcher.group(1);
+			
+			// if there are multiple delimeters, ex: [+][*]
+			if(customDelimeter.contains("[") && customDelimeter.contains("]")) {
+				customDelimeter = customDelimeter.replaceAll("\\[", "");
+				customDelimeter = customDelimeter.replaceAll("\\]", "|");
+				StringBuilder sb = new StringBuilder(customDelimeter);
+				sb.deleteCharAt(sb.length() - 1);
+				customDelimeter = sb.toString();
+			}
+			customDelimeter = addEscapeCharacters(customDelimeter);
 			numbers = matcher.group(2);
 			return numbers.split(customDelimeter);
 		} else { // default delimiter
 			return numbers.split(",|\n");
 		}
+	}
+
+	private String addEscapeCharacters(String customDelimeter) {
+		String delimeter = customDelimeter.replaceAll("(?=[]\\[+&!(){}^\"~*?:\\\\-])", "\\\\");
+		return delimeter;
 	}
 	
 }
