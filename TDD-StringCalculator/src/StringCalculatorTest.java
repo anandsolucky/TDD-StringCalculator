@@ -44,4 +44,14 @@ class StringCalculatorTest {
 		expected = 3;
 		assertEquals(expected, sc.add("//>\n1>2"), "test 4 allowing custom delimiter support failed");
 	}
+	@Test
+	void testFiveNegativeNumberNotAllowed() {
+		try {
+			sc.add("5,4,-3");
+			fail("test 5, couldn't throw exception");
+		} catch (Exception e) {
+			
+			
+		}
+	}
 }
