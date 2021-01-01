@@ -58,4 +58,9 @@ class StringCalculatorTest {
 		int expected = 2;
 		assertEquals(expected, sc.add("1001,2"), "test 6, Bigger number then 1000 should be ignored");
 	}
+	@Test
+	void testSevenDelimeterCanBeOfAnyLen() throws NegativeNumberException {
+		int expected = 4;
+		assertEquals(expected, sc.add("//del\n2del2"), "test 7, Delimiter can be of any length failed");
+	}
 }
