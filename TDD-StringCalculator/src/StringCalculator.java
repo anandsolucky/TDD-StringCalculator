@@ -5,7 +5,7 @@ public class StringCalculator {
 		if(numbers == "") {
 			return 0;
 		} else {
-			String tokens[] = numbers.split(",");
+			String tokens[] = numbers.split(",|\n");
 			if(tokens.length < 2) {
 				return 0;
 			} else {

@@ -34,5 +34,7 @@ class StringCalculatorTest {
 	void testThreeAllowNewLine() {
 		int expected = 6;
 		assertEquals(expected, sc.add("1\n2,3"), "test 3 allowing new line character failed");
+		expected = 7;
+		assertEquals(expected, sc.add("1\n2\n3,1"), "test 3 allowing new line character failed");
 	}
 }
