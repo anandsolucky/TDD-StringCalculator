@@ -40,6 +40,8 @@ class StringCalculatorTest {
 	@Test
 	void testFourSupportDiffDelim() {
 		int expected = 3;
-		assertEquals(expected, sc.add("//;\n1;2"), "test 4 allowing custom delimeter support failed");
+		assertEquals(expected, sc.add("//;\n1;2"), "test 4 allowing custom delimiter support failed");
+		expected = 3;
+		assertEquals(expected, sc.add("//>\n1>2"), "test 4 allowing custom delimiter support failed");
 	}
 }
