@@ -37,4 +37,9 @@ class StringCalculatorTest {
 		expected = 7;
 		assertEquals(expected, sc.add("1\n2\n3,1"), "test 3 allowing new line character failed");
 	}
+	@Test
+	void testFourSupportDiffDelim() {
+		int expected = 3;
+		assertEquals(expected, sc.add("//;\n1;2"), "test 4 allowing custom delimeter support failed");
+	}
 }
