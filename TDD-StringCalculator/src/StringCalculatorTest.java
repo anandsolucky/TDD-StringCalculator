@@ -53,4 +53,9 @@ class StringCalculatorTest {
 			assertThrows(NegativeNumberException.class, ()->sc.add("5,4,-3"));	
 		}
 	}
+	@Test
+	void testSixIgnoreBiggerNumberThenThousand() throws NegativeNumberException {
+		int expected = 2;
+		assertEquals(expected, sc.add("1001,2"), "test 6, Bigger number then 1000 should be ignored");
+	}
 }
