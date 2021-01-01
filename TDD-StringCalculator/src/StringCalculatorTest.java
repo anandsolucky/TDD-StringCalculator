@@ -29,4 +29,10 @@ class StringCalculatorTest {
 		expected = 10;
 		assertEquals(expected, sc.add("1,1,1,2,5"), "test 2 unknown amount of number failed");
 	}
+	
+	@Test
+	void testThreeAllowNewLine() {
+		int expected = 6;
+		assertEquals(expected, sc.add("1\n2,3"), "test 3 allowing new line character failed");
+	}
 }
