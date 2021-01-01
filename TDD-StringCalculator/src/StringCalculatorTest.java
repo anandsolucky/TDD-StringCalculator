@@ -72,4 +72,9 @@ class StringCalculatorTest {
 		expected = 6;
 		assertEquals(expected, sc.add("//[*][+]\n1+2*3"), "test 8, Allow multiple delimeter failed");
 	}
+	@Test
+	void testNineAllowMultipleCustomDelimWithAnyLen() throws NegativeNumberException {
+		int expected = 6;
+		assertEquals(expected, sc.add("//[*][%--]\n1*2%--3"), "test 9, Allow multiple delimeter and each can be of any len failed");
+	}
 }
