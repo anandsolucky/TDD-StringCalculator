@@ -26,5 +26,7 @@ class StringCalculatorTest {
 	void testTwoUknownAmountOfNumber() {
 		int expected = 6;
 		assertEquals(expected, sc.add("1,2,3"), "test 2 unknown amount of number failed");
+		expected = 10;
+		assertEquals(expected, sc.add("1,1,1,2,5"), "test 2 unknown amount of number failed");
 	}
 }

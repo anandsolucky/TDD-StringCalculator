@@ -1,13 +1,24 @@
 
 public class StringCalculator {
 	int add(String numbers) {
-		if(numbers == "") return 0;
-		else {
+		int sum = 0;
+		if(numbers == "") {
+			return 0;
+		} else {
 			String tokens[] = numbers.split(",");
-			if(tokens.length < 2) return 0;
-			else {
-				return Integer.parseInt(tokens[0]) + Integer.parseInt(tokens[1]);
+			if(tokens.length < 2) {
+				return 0;
+			} else {
+				for(String number: tokens) {
+					sum += toNum(number);
+				}
 			}
+			return sum;
 		}
 	}
+
+	private int toNum(String number) {
+		return Integer.parseInt(number);
+	}
+	
 }
