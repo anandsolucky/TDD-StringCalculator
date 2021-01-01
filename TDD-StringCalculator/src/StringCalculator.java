@@ -52,7 +52,7 @@ public class StringCalculator {
 	private String[] getTokens(String numbers) {
 		// if custom delimiter is added in the line
 		if(numbers.startsWith("//")) {
-			// regex to divide delimiter and numbers
+			// regex to divide delimiter and numbers, handles any length
 			Matcher matcher = Pattern.compile("//(.*)\n(.*)").matcher(numbers);
 			matcher.matches();
 			String customDelimeter = matcher.group(1);

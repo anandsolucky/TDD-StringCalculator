@@ -62,5 +62,7 @@ class StringCalculatorTest {
 	void testSevenDelimeterCanBeOfAnyLen() throws NegativeNumberException {
 		int expected = 4;
 		assertEquals(expected, sc.add("//del\n2del2"), "test 7, Delimiter can be of any length failed");
+		expected = 6;
+		assertEquals(expected, sc.add("//add\n2add2add2"), "test 7, Delimiter can be of any length failed");
 	}
 }
