@@ -21,4 +21,10 @@ class StringCalculatorTest {
 		expected = 0;
 		assertEquals(expected, sc.add(""), "Simple add operation failed");
 	}
+	
+	@Test
+	void testTwoUknownAmountOfNumber() {
+		int expected = 6;
+		assertEquals(expected, sc.add("1,2,3"), "test 2 unknown amount of number failed");
+	}
 }
